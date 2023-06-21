@@ -222,25 +222,6 @@ export const technologies: Technology[] = [
     ],
   },
   {
-    name: "GitHub Actions",
-    description:
-      "GitHub Actions is a tool for automating software development workflows. It is integrated with GitHub repositories and enables developers to automate tasks such as building, testing, and deploying their applications.",
-    links: [
-      {
-        title: "Website",
-        url: "https://github.com/features/actions",
-      },
-      {
-        title: "Docs",
-        url: "https://docs.github.com/en/actions",
-      },
-      {
-        title: "Workflow syntax",
-        url: "https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions",
-      },
-    ],
-  },
-  {
     name: "Vercel",
     description:
       "Vercel is a modern hosting platform for websites and web apps. With zero configuration, it will build and deploy your site globally and serverlessly with a single command. It can also be set up to do continuous deployments by integrating it with your repository host.",
