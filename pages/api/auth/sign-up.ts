@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { createUser } from '../utils/user/user.controller';
+import { createUser } from '../../../app/user/user.controller';
 type Data = {
   message: string
 }
@@ -7,7 +7,7 @@ type Data = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (req.method==='POST') {
         const {email, password, ...otherProps} = req.body;
-        
+
         if (!email || !email.includes('@') || !password) {
             res.status(422).json({ message: 'Invalid Data' });
             return;
