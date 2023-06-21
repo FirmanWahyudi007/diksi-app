@@ -1,4 +1,3 @@
-import connectDb from "@/lib/db";
 import UserModel, { IUser } from "./user.model";
 import bcryptjs from 'bcryptjs';
 type UserX = Omit<IUser, | 'createdAt' | 'updatedAt'>;
