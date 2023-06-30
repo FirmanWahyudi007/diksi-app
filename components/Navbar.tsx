@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { NAVBAR_ITEMS } from "@/utils/constant";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
+  const isActive = (path: string) => (router.pathname === path ? "active" : "");
   return (
     <>
       <nav
@@ -65,13 +68,16 @@ export default function Navbar() {
               {NAVBAR_ITEMS.map((item, index) => (
                 <li data-te-nav-item-ref key={index}>
                   <Link
-                    className='block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out 
+                    className={`block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out 
                     hover:text-neutral-600 focus:text-neutral-600 disabled:text-black/30 dark:text-neutral-200 
                     dark:hover:text-neutral-300 dark:focus:text-neutral-300 
-                    dark:disabled:text-white/30 lg:px-2 [&.active]:text-black/80 dark:[&.active]:text-white/80'
+                    dark:disabled:text-white/30 lg:ml-4 lg:px-2 lg:py-0 
+                    lg:hover:text-black lg:focus:text-black`}
                     href={item.path}
                   >
-                    {item.name}
+                    <span className={isActive(item.path) ? "text-black" : ""}>
+                      {item.name}
+                    </span>
                   </Link>
                 </li>
               ))}
