@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createUser } from "../../../app/user/user.controller";
+import { createUser } from "../../app/user/user.controller";
 type Data = {
   message: string;
 };
