@@ -1,4 +1,4 @@
-import connectDB from "@/pages/utils/db";
+import connectDB from "@/lib/db";
 import CategoryModel, { ICategory } from "./category.model";
 import slugify from "slugify";
 type CategoryX = Omit<ICategory, "createdAt" | "updatedAt">;

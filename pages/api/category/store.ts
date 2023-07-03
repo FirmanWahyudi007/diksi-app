@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createCategory } from "../../app/category/category.controller";
+import { createCategory } from "@/app/category/category.controller";
 type Data = {
   message: string;
 };
