@@ -1,9 +1,11 @@
 import UserModel, { IUser } from "./user.model";
 import bcryptjs from "bcryptjs";
+import connectDB from "@/lib/db";
 
 type UserX = Omit<IUser, "createdAt" | "updatedAt">;
 export const createUser = async (user: UserX) => {
   console.log("Request to add user: ", user);
+  await connectDB();
   const userAdded: UserX = {
     ...user,
     password: bcryptjs.hashSync(user.password, 10),

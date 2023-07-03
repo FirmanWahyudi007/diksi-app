@@ -5,6 +5,7 @@ type CategoryX = Omit<ICategory, "createdAt" | "updatedAt">;
 
 export const createCategory = async (category: CategoryX) => {
   console.log("Request to add category: ", category);
+  await connectDB();
   const categoryAdded: CategoryX = {
     ...category,
     slug: slugify(category.name).toLowerCase(),
