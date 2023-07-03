@@ -1,3 +1,4 @@
+import connectDB from "@/lib/db";
 import CategoryModel, { ICategory } from "./category.model";
 import slugify from "slugify";
 type CategoryX = Omit<ICategory, "createdAt" | "updatedAt">;
@@ -18,6 +19,7 @@ export const createCategory = async (category: CategoryX) => {
 };
 
 export const getCategories = async () => {
+  await connectDB();
   const categories = await CategoryModel.find({});
   if (!categories) throw new Error("No Categories Found");
   return categories;

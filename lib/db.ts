@@ -1,20 +1,16 @@
 import mongoose from "mongoose";
-const options = {
-  // Increase the timeout value (in milliseconds)
-  serverSelectionTimeoutMS: 30000,
-};
-
+//connect to mongodb
 const connectionUrl =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://diksiapp:X4cOFBuixL4aGFUW@cluster0.jv7vaxo.mongodb.net/?retryWrites=true&w=majority";
-const connectDb = async () => {
+  "mongodb+srv://firmanwa:oI0pndHSagrC7uMm@cluster0.m8exwf5.mongodb.net/testdb?retryWrites=true&w=majority";
+const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(connectionUrl, options);
+    const conn = await mongoose.connect(
+      process.env.MONGODB_URI || connectionUrl
+    );
     console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.error("Error Encountered: ", err);
     process.exit(1);
   }
 };
-
-export default connectDb;
+export default connectDB;

@@ -1,14 +1,14 @@
 import UserModel, { IUser } from "./user.model";
 import bcryptjs from "bcryptjs";
-type UserX = Omit<IUser, "createdAt" | "updatedAt">;
 
+type UserX = Omit<IUser, "createdAt" | "updatedAt">;
 export const createUser = async (user: UserX) => {
   console.log("Request to add user: ", user);
   const userAdded: UserX = {
     ...user,
     password: bcryptjs.hashSync(user.password, 10),
   };
-  console.log("Request to add user: ", userAdded);
+  // console.log("Request to add user: ", userAdded);
   const finduser = await UserModel.findOne({
     email: userAdded.email,
   });
