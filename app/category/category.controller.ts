@@ -16,3 +16,9 @@ export const createCategory = async (category: CategoryX) => {
   const newCategory = await CategoryModel.create(categoryAdded);
   return newCategory;
 };
+
+export const getCategories = async () => {
+  const categories = await CategoryModel.find({});
+  if (!categories) throw new Error("No Categories Found");
+  return categories;
+};
