@@ -20,8 +20,8 @@ export default async function handler(
       res.status(422).json({ message: "Category already exists" });
       return;
     }
-    // sign in the user
-    res.status(201).json({ message: "Category created", ...data });
+    const categoryObject = { message: "Category created", data: data } as any;
+    res.status(201).json(categoryObject);
     return;
   } else {
     res.status(500).send({ message: "Invalid Route" });

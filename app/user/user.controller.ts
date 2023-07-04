@@ -4,7 +4,6 @@ import connectDB from "@/lib/db";
 
 type UserX = Omit<IUser, "createdAt" | "updatedAt">;
 export const createUser = async (user: UserX) => {
-  console.log("Request to add user: ", user);
   await connectDB();
   const userAdded: UserX = {
     ...user,
@@ -14,7 +13,7 @@ export const createUser = async (user: UserX) => {
   const finduser = await UserModel.findOne({
     email: userAdded.email,
   });
-  if (finduser) throw new Error("User Found, Change Email");
+  if (finduser) return null;
   const newUser = await UserModel.create(userAdded);
-  return newUser;
+  return newUser.toObject();
 };
