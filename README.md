@@ -24,7 +24,6 @@ Each script is run using `yarn <script-name>`. For example: `yarn dev`.
 
 | Name            | Description                                                                    |
 | --------------- | ------------------------------------------------------------------------------ |
-| `test`          | Runs tests                                                                     |
 | `dev`           | Runs the Next.js development server.                                           |
 | `build`         | Generates a production build.                                                  |
 | `start`         | Runs the Next.js production server built using `build` script.                 |
@@ -49,5 +48,4 @@ The table below gives an overview of the technologies used in this project, as w
 | ESLint          | [Website](https://eslint.org/) - [Configuration](https://eslint.org/docs/user-guide/configuring/) - [Rules](https://eslint.org/docs/rules/) - [GitHub](https://github.com/eslint/eslint)                        |
 | Prettier        | [Website](https://prettier.io/) - [Docs](https://prettier.io/docs/en/index.html) - [Options](https://prettier.io/docs/en/options.html) - [GitHub](https://github.com/prettier/prettier)                         |
 | Yarn            | [Website](https://yarnpkg.com/) - [CLI Docs](https://yarnpkg.com/cli) - [GitHub](https://github.com/yarnpkg/berry)                                                                                              |
-| GitHub Actions  | [Website](https://github.com/features/actions) - [Docs](https://docs.github.com/en/actions) - [Workflow syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)                |
 | Vercel          | [Website](https://vercel.com/) - [Docs](https://vercel.com/docs) - [CLI Docs](https://vercel.com/docs/cli)                                                                                                      |
